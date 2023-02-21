@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
 
-function TodoItem({ id, name }) {
+function TodoItem({ item }) {
+  const { id, title } = item;
   return (
-    <li className="row" data-id={id}>
+    <li className="row" key={id}>
       <div className="task">
-        <input type="checkbox" data-id={id} className="task-check" />
-        <span className="task-title">{name}</span>
+        <input type="checkbox" className="task-check" />
+        <span className="task-title">{title}</span>
       </div>
       <i className="fas fa-ellipsis-v pointer edit-task" />
     </li>
@@ -13,8 +14,11 @@ function TodoItem({ id, name }) {
 }
 
 TodoItem.propTypes = {
-  name: PropTypes.string.isRequired,
-  id: PropTypes.isRequired,
+  item: PropTypes.objectOf({
+    id: PropTypes.number,
+    title: PropTypes.string,
+    completed: PropTypes.bool,
+  }).isRequired,
 };
 
 export default TodoItem;
