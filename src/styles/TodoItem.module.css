@@ -1,0 +1,28 @@
+.item {
+  padding: 15px;
+  border-bottom: 1px solid #ebebeb;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item li {
+  font-size: 14px;
+  font-weight: 300;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  color: #525252;
+}
+
+.item .task {
+  width: 95%;
+}
+
+.textInput {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dfdfdf;
+  outline: none;
+  margin: 10px 0;
+}
