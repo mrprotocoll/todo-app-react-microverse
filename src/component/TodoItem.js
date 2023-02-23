@@ -3,13 +3,13 @@ import { useRef, useState } from 'react';
 import styles from 'styles/TodoItem.module.css';
 import { FaTrash } from 'react-icons/fa';
 import { AiFillEdit } from 'react-icons/ai';
+import { useTodoContext } from 'context/TodoContext';
 
-function TodoItem({
-  item, handleTodoItemCheck, deleteItem, updateItem,
-}) {
+function TodoItem({ item }) {
   const { id, title, completed } = item;
   const [edit, setEdit] = useState(false);
   const titleRef = useRef(null);
+  const { handleTodoItemCheck, deleteItem, updateItem } = useTodoContext();
 
   const handleUpdate = (event) => {
     if (event.key === 'Enter') {
@@ -41,6 +41,7 @@ function TodoItem({
           className={styles.textInput}
           defaultValue={title}
           onKeyDown={handleUpdate}
+          onBlur={() => setEdit(false)}
         />
       </div>
     </li>
@@ -53,9 +54,6 @@ TodoItem.propTypes = {
     title: PropTypes.string,
     completed: PropTypes.bool,
   }).isRequired,
-  handleTodoItemCheck: PropTypes.func.isRequired,
-  deleteItem: PropTypes.func.isRequired,
-  updateItem: PropTypes.func.isRequired,
 };
 
 export default TodoItem;

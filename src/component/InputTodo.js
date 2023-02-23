@@ -1,11 +1,12 @@
-import PropTypes from 'prop-types';
 import { useState } from 'react';
 import styles from 'styles/InputTodo.module.css';
 import { FaPlusCircle } from 'react-icons/fa';
+import { useTodoContext } from 'context/TodoContext';
 
-const InputTodo = ({ addItem }) => {
+const InputTodo = () => {
   const [title, setTitle] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const { addItem } = useTodoContext();
 
   const handleInputChange = (e) => setTitle(e.target.value);
 
@@ -35,10 +36,6 @@ const InputTodo = ({ addItem }) => {
       <span className="error">{errorMessage}</span>
     </>
   );
-};
-
-InputTodo.propTypes = {
-  addItem: PropTypes.func.isRequired,
 };
 
 export default InputTodo;
