@@ -22,7 +22,6 @@ ul {
   flex-direction: column;
   margin: 0 auto;
   max-width: 967px;
-  justify-content: center;
   height: 100vh;
 }
 
@@ -60,4 +59,9 @@ button {
 
 .del-btn {
   color: red;
+}
+
+.show-menu {
+  width: 100% !important;
+  transform: translateX(0px) !important;
 }
