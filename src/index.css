@@ -22,7 +22,6 @@ ul {
   flex-direction: column;
   margin: 0 auto;
   max-width: 967px;
-  justify-content: center;
   height: 100vh;
 }
 
@@ -41,10 +40,9 @@ button {
 }
 
 .pointer {
-  width: 7%;
-  text-align: center;
-  padding: 3px;
+  padding: 10px;
   cursor: pointer;
+  font-size: 20px;
 }
 
 .active {
@@ -57,4 +55,13 @@ button {
 
 .d-flex {
   display: flex;
+}
+
+.del-btn {
+  color: red;
+}
+
+.show-menu {
+  width: 100% !important;
+  transform: translateX(0) !important;
 }

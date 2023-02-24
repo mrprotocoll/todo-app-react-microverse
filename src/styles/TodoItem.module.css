@@ -1,8 +1,11 @@
 .item {
-  padding: 15px;
+  padding: 5px 15px;
   border-bottom: 1px solid #ebebeb;
   justify-content: space-between;
   align-items: center;
+  background-color: #ebebebb2;
+  border-radius: 5px;
+  margin: 10px 0;
 }
 
 .item li {
@@ -17,6 +20,10 @@
 
 .item .task {
   width: 95%;
+}
+
+.item span {
+  margin-left: 10px;
 }
 
 .textInput {

@@ -1,15 +1,19 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import styles from 'styles/TodoItem.module.css';
+import { FaTrash } from 'react-icons/fa';
+import { AiFillEdit } from 'react-icons/ai';
+import { useTodoContext } from 'context/TodoContext';
 
-function TodoItem({
-  item, handleTodoItemCheck, deleteItem, updateItem,
-}) {
+function TodoItem({ item }) {
   const { id, title, completed } = item;
   const [edit, setEdit] = useState(false);
+  const titleRef = useRef(null);
+  const { handleTodoItemCheck, deleteItem, updateItem } = useTodoContext();
 
-  const handleUpdate = (e) => {
-    if (e.key === 'Enter') {
+  const handleUpdate = (event) => {
+    if (event.key === 'Enter') {
+      updateItem(id, titleRef.current.value);
       setEdit(false);
     }
   };
@@ -22,20 +26,23 @@ function TodoItem({
           <span className={`task-title ${completed ? 'strike' : ''}`}>{title}</span>
         </div>
         <div>
-          <button type="button" onClick={() => setEdit(!edit)}>
-            <i className="fas delete-task fa-solid fa-edit pointer icon" />
-            {' '}
-            Edit
+          <button type="button" className="pointer" onClick={() => setEdit(!edit)}>
+            <AiFillEdit />
           </button>
-          <button type="button" className="pointer" onClick={() => deleteItem(id)}>
-            <i className="fas delete-task fa-solid fa-trash-can pointer icon" />
-            {' '}
-            Delete
+          <button type="button" className="pointer del-btn" onClick={() => deleteItem(id)}>
+            <FaTrash />
           </button>
         </div>
       </div>
       <div className={edit ? 'd-flex' : 'd-none'}>
-        <input type="text" value={title} className={styles.textInput} onKeyDown={handleUpdate} onChange={(e) => updateItem(id, e.target.value)} />
+        <input
+          type="text"
+          ref={titleRef}
+          className={styles.textInput}
+          defaultValue={title}
+          onKeyDown={handleUpdate}
+          onBlur={() => setEdit(false)}
+        />
       </div>
     </li>
   );
@@ -47,9 +54,6 @@ TodoItem.propTypes = {
     title: PropTypes.string,
     completed: PropTypes.bool,
   }).isRequired,
-  handleTodoItemCheck: PropTypes.func.isRequired,
-  deleteItem: PropTypes.func.isRequired,
-  updateItem: PropTypes.func.isRequired,
 };
 
 export default TodoItem;
