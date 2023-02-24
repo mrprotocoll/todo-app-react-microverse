@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/todo-app-react-microverse/static/css/main.24ece9a2.css",
+    "main.js": "/todo-app-react-microverse/static/js/main.e0c52b29.js",
+    "index.html": "/todo-app-react-microverse/index.html",
+    "main.24ece9a2.css.map": "/todo-app-react-microverse/static/css/main.24ece9a2.css.map",
+    "main.e0c52b29.js.map": "/todo-app-react-microverse/static/js/main.e0c52b29.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.24ece9a2.css",
+    "static/js/main.e0c52b29.js"
+  ]
+}
