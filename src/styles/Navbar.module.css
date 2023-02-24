@@ -1,25 +1,27 @@
-/*==========================
+/* ==========================
 Sidebar navigation
-========================*/
+======================== */
 .navbar {
   position: relative;
-  margin-bottom: 2rem;
   padding-top: 1rem;
 }
+
 button {
   cursor: pointer;
-  background: transparent;;
+  background: transparent;
   border: none;
   font-size: 20px;
 }
+
 .navbar .toggle {
   position: fixed;
   left: 30px;
   top: 40px;
   cursor: pointer;
-  background: transparent;;
+  background: transparent;
   border: none;
 }
+
 .menu-nav {
   list-style: none;
   position: absolute;
@@ -33,22 +35,28 @@ button {
   box-shadow: 0 10px 15px -3px rgb(46 41 51 / 8%), 0 4px 6px -2px rgb(71 63 79 / 16%);
   transform: translateX(-100px);
   transition: transform ease-in-out 0.2s;
+
   /* transition: width ease 0.2s; */
 }
+
 .menu-nav .show-menu {
   width: 100%;
-  transform: translateX(0px);
+  transform: translateX(0);
 }
-.menu-nav li a, .menu-nav li span {
+
+.menu-nav li a,
+.menu-nav li span {
   display: block;
   padding: 1rem;
 }
+
 .log-in {
   color: #777;
   border-top: 1px solid #efecec;
   margin-top: 15px;
   font-size: 15px;
 }
+
 /* logout */
 .logout {
   position: absolute;

@@ -27,8 +27,8 @@ const InputTodo = () => {
 
   return (
     <>
-      <form id="new-task-form" className={styles.container} onSubmit={handleSubmit}>
-        <input type="text" onChange={handleInputChange} value={title} className={styles.input} placeholder="Add to your list..." id="task-description" />
+      <form className={styles.container} onSubmit={handleSubmit}>
+        <input type="text" onChange={handleInputChange} value={title} className={styles.input} placeholder="Add to your list..." />
         <button type="submit" aria-label="Add todo item" className="pointer">
           <FaPlusCircle />
         </button>

@@ -1,5 +1,6 @@
 const About = () => (
   <div>
+    <h1>MrProtocoll Todo App</h1>
     <p>
       Lorem ipsum, dolor sit amet consectetur adipisicing elit.
       Asperiores rem,

@@ -3,6 +3,9 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  margin-bottom: 3rem;
+  padding: 20px;
 }
 
 .header p {
@@ -13,5 +16,5 @@
 }
 
 .header img {
-  width: 50%;
+  width: 40%;
 }
